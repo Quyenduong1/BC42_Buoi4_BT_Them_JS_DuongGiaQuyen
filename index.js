@@ -257,7 +257,48 @@ let buttonB3 = document.getElementById("button-b3").onclick = function () {
 
 }
 
-// Bài 4: 
+// Bài 4: Tìm sinh viên xa trường nhất
+document.getElementById("button-find").onclick = function() {
+    // B1: lấy giá trị của 3 sinh viên và trường học về 
+    let student1 = document.getElementById("hs1").value;
+    let student1x = +document.getElementById("hs1x").value;
+    let student1y = +document.getElementById("hs1y").value;
+
+    // Sinh viên 2 
+
+    let student2 = document.getElementById("hs2").value;
+    let student2x = +document.getElementById("hs2x").value;
+    let student2y = +document.getElementById("hs2y").value;
+
+    // Sinh viên 3 
+
+    let student3 = document.getElementById("hs3").value;
+    let student3x = +document.getElementById("hs3x").value;
+    let student3y = +document.getElementById("hs3y").value;
+
+    // Trường học 
+    let schoolX = +document.getElementById("schoolXX").value;
+    let schoolY = +document.getElementById("schoolYY").value;
+
+    // Hiển thị giá trị 
+    let showFind = document.getElementById("show-find");
+    showFind.style.display = "block";
+
+    // B2: Thuật toán 
+    let distance1 = Math.sqrt(Math.pow(schoolX-student1x,2)+ Math.pow(schoolY-student1y,2));
+    let distance2 = Math.sqrt((Math.pow(schoolX-student2x,2))+ (Math.pow(schoolX-student2y,2)));
+    let distance3 = Math.sqrt((Math.pow(schoolX-student3x,2))+ (Math.pow(schoolX-student3y,2)));
+    
+
+    if ( distance1 > distance2 && distance1 > distance3) {  
+        showFind.innerHTML = " Sinh viên: " + student1 + " Xa trường nhất "; 
+    } else if ( distance2 > distance1 && distance2 > distance3) {
+        showFind.innerHTML = " Sinh viên: " + student2 + " Xa trường nhất "; 
+    } else if ( distance3 > distance1 && distance3 > distance2) {
+        showFind.innerHTML = " Sinh viên: " + student3 + " Xa trường nhất "; 
+    }
+
+}
 
 
 
